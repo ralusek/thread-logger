@@ -1,6 +1,6 @@
 {
   "name": "thread-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logging utility which makes heavy use of CLS (continuation local storage).",
   "main": "index.js",
   "scripts": {
