@@ -1,0 +1,31 @@
+{
+  "name": "thread-logger",
+  "version": "0.0.1",
+  "description": "Logging utility which makes heavy use of CLS (continuation local storage).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cls",
+    "continuation",
+    "local",
+    "storage",
+    "domains",
+    "logging",
+    "logs",
+    "logger"
+  ],
+  "author": "Tomas Savigliano",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "cls-bluebird": "^2.0.1",
+    "continuation-local-storage": "^3.2.0",
+    "hodash.profile": "^1.0.2",
+    "lodash.get": "^4.4.2",
+    "lodash.isfunction": "^3.0.8",
+    "node-uuid": "^1.4.8",
+    "traceback-safe": "^0.3.1-1"
+  }
+}
