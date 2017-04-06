@@ -1,7 +1,7 @@
 'use strict';
 
 const _get = require('lodash.get');
-const _isFunction = require('lodash.isFunction');
+const _isFunction = require('lodash.isfunction');
 const cls = require('continuation-local-storage');
 const clsBluebird = require('cls-bluebird');
 

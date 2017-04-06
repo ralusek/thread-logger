@@ -1,7 +1,7 @@
 'use strict';
 
 const _get = require('lodash.get');
-const _isFunction = require('lodash.isFunction');
+const _isFunction = require('lodash.isfunction');
 
 /**
  *

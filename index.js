@@ -2,7 +2,7 @@
 
 const Promise = require('bluebird');
 const _get = require('lodash.get');
-const _isFunction = require('lodash.isFunction');
+const _isFunction = require('lodash.isfunction');
 const _forOwn = require('lodash.forown');
 const _profile = require('hodash.profile');
 
