@@ -90,7 +90,7 @@ function formatRequest(contextLog, req, res) {
   return Object.assign(contextLog.output(true), {
     statusCode: res.statusCode,
     method: req.method,
-    url: (req.url || '').split('?')[0].replace(/\/$/, ''),
+    url: (req.originalUrl || req.url || '').split('?')[0].replace(/\/$/, ''),
     query: Object.assign({}, req.query || {}),
     body: Object.assign({}, req.body || {}),
     params: Object.assign({}, req.params || {}),
