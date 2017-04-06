@@ -3,6 +3,7 @@
 const Promise = require('bluebird');
 const _get = require('lodash.get');
 const _isFunction = require('lodash.isFunction');
+const _forOwn = require('lodash.forown');
 const _profile = require('hodash.profile');
 
 const CLS = require('./CLS');
@@ -131,6 +132,18 @@ class ThreadLogger {
       self.timerEnd(timer, logLevel);
       return result;
     };
+  }
+
+  /**
+   *
+   */
+  profileAll(module, formatKey) {
+    formatKey = _isFunction(formatKey) ? formatKey : (key) => key;
+    _forOwn(module, (item, key) => {
+      if (_isFunction(item)) {
+        module[key] = this.time(formatKey(key), item);
+      }
+    });
   }
 
   /**
