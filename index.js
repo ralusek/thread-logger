@@ -118,10 +118,12 @@ class ThreadLogger {
    */
   time(name, f, logLevel, ctx) {
     const self = this;
+
+    ctx = _isFunction(ctx) ? ctx : () => ctx;
     return function() {
       const timer = self.timerStart(name);
 
-      const result = f.apply(ctx, arguments);
+      const result = f.apply(ctx(), arguments);
 
       if (_isFunction(_get(result, 'then'))) {
         return Promise.resolve(result)
@@ -137,11 +139,11 @@ class ThreadLogger {
   /**
    *
    */
-  profileAll(module, formatKey) {
+  profileAll(module, formatKey, logLevel, ctx) {
     formatKey = _isFunction(formatKey) ? formatKey : (key) => key;
     _forOwn(module, (item, key) => {
       if (_isFunction(item)) {
-        module[key] = this.time(formatKey(key), item);
+        module[key] = this.time(formatKey(key), item, logLevel, (ctx || module));
       }
     });
   }
